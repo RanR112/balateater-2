@@ -1,5 +1,5 @@
 import React from 'react'
-import pakwawan from './pakwawan.jpg';
+import { pakwawan } from '../../assets';
 
 
 const Footer = () => {

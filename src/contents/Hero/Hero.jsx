@@ -51,7 +51,7 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                 >
-                    Daftar Sekarang!
+                    <a href="#daftar">Daftar Sekarang!</a>
                 </motion.button>
             </div>
         </section>

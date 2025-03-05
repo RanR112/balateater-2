@@ -1,14 +1,22 @@
 import React from 'react'
-import video from './contoh.mp4';
+import { video_webm, video_mp4 } from '../../assets';
 
-
-export default function HeroBackground() {
+const HeroBackground = () => {
     return (
         <div className="hero-video-container">
-            <video autoPlay muted loop className="hero-video">
-                <source src={video} type="video/mp4" />
+            <video 
+                autoPlay 
+                muted 
+                loop 
+                preload="metadata"
+                className="hero-video"
+            >
+                <source src={video_webm} type="video/webm" />
+                <source src={video_mp4} type="video/mp4" />
             </video>
-        <div className="hero-overlay"></div>
-    </div>
+            <div className="hero-overlay"></div>
+        </div>
     )
 }
+
+export default HeroBackground;
