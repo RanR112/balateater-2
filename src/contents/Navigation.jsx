@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion';
 import { logo } from '../assets';
 
@@ -10,9 +10,35 @@ const Navigation = () => {
         setActive((prev) => !prev);
     };
 
+    useEffect(() => {
+        const handleScroll = () => {
+            const sections = ['home', 'about', 'gallery', 'achievements', 'daftar'];
+            
+            const current = sections.find(section => {
+                const element = document.getElementById(section);
+                if (element) {
+                    const rect = element.getBoundingClientRect();
+                    return rect.top <= 150 && rect.bottom >= 150;
+                }
+                return false;
+            });
+            
+            if (current) {
+                setActiveItem(current);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        
+        handleScroll();
+        
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return (
         <nav className="main-nav">
-            {/* <div className={`${active ? 'layer' : ''}`}></div> */}
             <div className="logo">
                 <img src={logo} alt="Logo" className='logo-img' />
                 <span>BALA</span>
@@ -32,7 +58,6 @@ const Navigation = () => {
                             initial={{ y: -20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             className={activeItem === item.toLowerCase() ? 'active' : ''}
-                            onClick={() => setActiveItem(item.toLowerCase())}
                         >
                             <a href={`#${item.toLowerCase()}`}>
                                 {item}
