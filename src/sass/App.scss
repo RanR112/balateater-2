@@ -25,6 +25,11 @@ $transition-smooth: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   }
 }
 
+::selection {
+  background: $accent-color;
+  color: white;
+}
+
 html {
   scroll-behavior: smooth;
   font-size: 16px;

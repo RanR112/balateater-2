@@ -12,6 +12,16 @@
   }
 }
 
+::-moz-selection {
+  background: #6a7079;
+  color: white;
+}
+
+::selection {
+  background: #6a7079;
+  color: white;
+}
+
 html {
   scroll-behavior: smooth;
   font-size: 16px;
