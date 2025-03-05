@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion';
-import HeroBackground from '../../components/HeroBackground/HeroBackground'
+import { HeroBackground } from '../components'
 
 const Hero = () => {
     const [scrollY, setScrollY] = useState(0);

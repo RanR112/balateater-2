@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import GalleryData from '../../global/Gallery';
+import GalleryData from '../global/Gallery';
 
 const Gallery = () => {
     const [showAll, setShowAll] = useState(false);

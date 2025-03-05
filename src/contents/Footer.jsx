@@ -1,5 +1,5 @@
 import React from 'react'
-import { pakwawan } from '../../assets';
+import { pakwawan } from '../assets';
 
 
 const Footer = () => {
@@ -21,10 +21,10 @@ const Footer = () => {
                     <a href="https://instagram.com/teaterbalaa" target="_blank" rel="noopener noreferrer">
                         <i className="fab fa-instagram"></i> @teaterbala
                     </a>
-                    <a href="#" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.youtube.com/@balateater3794" target="_blank" rel="noopener noreferrer">
                         <i className="fab fa-youtube"></i> Bala Teater
                     </a>
-                    <a href="#" target="_blank" rel="noopener noreferrer">
+                    <a href="https://wa.me/+628882401300" target="_blank" rel="noopener noreferrer">
                         <i className="fab fa-whatsapp"></i> WhatsApp
                     </a>
                 </div>
@@ -32,7 +32,7 @@ const Footer = () => {
             </div>
         
             <div className="footer-copyright">
-                <p>© 2024 Bala Teater. All Right Reserved.</p>
+                <p>© 2025 Bala Teater. All Right Reserved.</p>
             </div>
         </footer>
     );

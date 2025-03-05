@@ -1,13 +1,12 @@
 // App.jsx
 import React, { useEffect, useState, useRef } from 'react';
 import { About, Achievements, Footer, Gallery, Hero, Navigation, Registration } from './contents';
-import ParticleBackground from './components/ParticleBackground/ParticleBackground';
+import { ParticleBackground, SplashScreen } from './components';
 import './sass/App.css';
-import SplashScreen from './components/SplashScreen';
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const isMobile = window.innerWidth < 768
   // Custom cursor effect
   const cursorRef = useRef(null);
   const cursorDotRef = useRef(null);

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion';
-import { logo } from '../../assets';
+import { logo } from '../assets';
 
 const Navigation = () => {
     const [active, setActive] = useState(false);

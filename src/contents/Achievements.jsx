@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion';
-import AchievementData from '../../global/Achievements';
+import AchievementData from '../global/Achievements';
 
 
 const Achievements = () => {

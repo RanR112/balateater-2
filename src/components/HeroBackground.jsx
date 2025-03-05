@@ -1,5 +1,5 @@
 import React from 'react'
-import { video_webm, video_mp4 } from '../../assets';
+import { video_webm, video_mp4 } from '../assets';
 
 const HeroBackground = () => {
     return (
