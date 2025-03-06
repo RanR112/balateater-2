@@ -33,7 +33,7 @@ const Achievements = () => {
             ))}
             </div>
             <div className="script">
-                <a href='https://drive.google.com/drive/folders/1VyLMpW3YZ5o6Q8RIVg9I9Uv1E5pg9yp-'>&raquo; Naskah yang sudah pernah dibawakan &laquo;</a>
+                <a href='https://drive.google.com/drive/folders/1VyLMpW3YZ5o6Q8RIVg9I9Uv1E5pg9yp-' target="_blank" rel="noopener noreferrer">&raquo; Naskah yang sudah pernah dibawakan &laquo;</a>
             </div>
         </section>
     );
