@@ -5,7 +5,8 @@ const RegistrationForm = () => {
     const [formState, setFormState] = useState({
         Nama: '',
         Kelas: '',
-        Nomor: ''
+        Nomor: '',
+        Email: ''
     });
     const formRef = useRef(null);
     
@@ -15,7 +16,8 @@ const RegistrationForm = () => {
     const [isFocused, setIsFocused] = useState({
         Nama: false,
         Kelas: false,
-        Nomor: false
+        Nomor: false,
+        Email: false
     });
 
     const handleChange = (e) => {
@@ -48,7 +50,8 @@ const RegistrationForm = () => {
                 setDuplicateCheckData({
                     Nama: formState.Nama,
                     Kelas: formState.Kelas,
-                    Nomor: formState.Nomor
+                    Nomor: formState.Nomor,
+                    Email: formState.Email
                 });
                 setSubmissionStatus('duplicate');
                 setIsSubmitting(false);
@@ -69,6 +72,7 @@ const RegistrationForm = () => {
         } else {
             // Jika user memilih Tidak
             setSubmissionStatus('rejected');
+            setDuplicateCheckData(null); // Reset duplicate data saat user menolak update
             setIsSubmitting(false);
         }
     };
@@ -77,7 +81,8 @@ const RegistrationForm = () => {
         e.preventDefault();
         setIsSubmitting(true);
         
-        // Reset duplicateCheckData sebelum melakukan pengecekan baru
+        // Reset status dan duplicateCheckData sebelum melakukan pengecekan baru
+        setSubmissionStatus(null); 
         setDuplicateCheckData(null);
         
         const formData = new FormData(formRef.current);
@@ -94,27 +99,48 @@ const RegistrationForm = () => {
             const result = await response.json();
 
             if (result.result === 'success' || result.result === 'update') {
-                setSubmissionStatus('success');
-                // Reset duplicateCheckData setelah berhasil submit
+                // Reset duplicate data SEBELUM mengubah status
                 setDuplicateCheckData(null);
-                resetForm();
+                
+                // Perlu setTimeout untuk memastikan UI di-render dengan benar
+                // dan mencegah status berubah terlalu cepat
+                setTimeout(() => {
+                    setSubmissionStatus('success');
+                    resetForm();
+                }, 350);
             } else {
                 setSubmissionStatus('error');
+                setDuplicateCheckData(null);
             }
         } catch (error) {
-            setSubmissionStatus('error')
+            setSubmissionStatus('error');
+            setDuplicateCheckData(null);
         } finally {
             setIsSubmitting(false);
         }
     };
     
+    // Modifikasi resetForm untuk menangani reset yang lebih aman
     const resetForm = () => {
-        setFormState({
-            Nama: '',
-            Kelas: '',
-            Nomor: ''
-        });
-        formRef.current.reset();
+        // Gunakan setTimeout untuk menunda reset form
+        // sehingga tidak terjadi konflik dengan state lainnya
+        setTimeout(() => {
+            setFormState({
+                Nama: '',
+                Kelas: '',
+                Nomor: '',
+                Email: ''
+            });
+            
+            // Reset form secara manual, bukan dengan formRef.current.reset()
+            // yang mungkin memicu event handler lainnya
+            if (formRef.current) {
+                const inputs = formRef.current.querySelectorAll('input');
+                inputs.forEach(input => {
+                    input.value = '';
+                });
+            }
+        }, 300);
     };
     
     const isFormValid = formState.Nama && formState.Kelas && formState.Nomor;
@@ -139,14 +165,17 @@ const RegistrationForm = () => {
         }
     };
 
+    // Pasang event listener hanya sekali saat komponen di-mount
     useEffect(() => {
         const form = formRef.current;
-        form.addEventListener("submit", handleSubmit);
-
-        return () => {
-            form.removeEventListener("submit", handleSubmit);
-        };
-    }, []);
+        if (form) {
+            form.addEventListener("submit", handleSubmit);
+            
+            return () => {
+                form.removeEventListener("submit", handleSubmit);
+            };
+        }
+    }, []); // Empty dependency array to run only once
 
     return (
         <section id="daftar" className="registration-section">
@@ -170,11 +199,12 @@ const RegistrationForm = () => {
                     Silahkan isi form dibawah ini jika kamu berminat untuk bergabung
                 </p>
                 
-                <form ref={formRef} method='POST' action='https://script.google.com/macros/s/AKfycbwCUjg6us65iJwtGIBRZxgzZ9rqNUmFHSWsPCzl3J1SE31xeRGcoS9p4vxTO9uFMjpi/exec'>
+                <form ref={formRef} method='POST' action='https://script.google.com/macros/s/AKfycbyqPI4Yr7e1U7g-yG17AHYsnsLXPiGULzVJllVp6UizOjE_NfnmggKLzsk7Jf_M2tf6/exec'>
                     {[
                         { name: 'Nama', label: 'Nama', type: 'text'},
                         { name: 'Kelas', label: 'Kelas', type: 'text'},
-                        { name: 'Nomor', label: 'No. Whatsapp', type: 'text'}
+                        { name: 'Nomor', label: 'No. Whatsapp', type: 'text'},
+                        { name: 'Email', label: 'Email', type: 'text'}
                     ].map((field) => (
                         <motion.div
                             key={field.name}
@@ -212,7 +242,7 @@ const RegistrationForm = () => {
                     </motion.button>
                     
                     <AnimatePresence>
-                        {submissionStatus === "duplicate" && (
+                        {submissionStatus === "duplicate" && duplicateCheckData && (
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
@@ -244,7 +274,7 @@ const RegistrationForm = () => {
                     </AnimatePresence>
                     
                     <p className="form-note">
-                        *Informasi selanjutnya akan dikirimkan melalui WhatsApp*
+                        *Silahkan cek Email untuk informasi selanjutnya*
                     </p>
                 </form>
             </motion.div>
