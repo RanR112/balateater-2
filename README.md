@@ -91,7 +91,7 @@ Bala Teater is a website designed to showcase the theater group's activities, ac
 If you'd like to contribute, please fork the repository and submit a pull request with your improvements.
 
 ## License
-This project is licensed under the MIT License.
+This project is licensed under the [MIT License](LICENSE).
 
 ---
 Developed by Randy Rafael.
