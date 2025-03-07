@@ -24,7 +24,7 @@ const Footer = () => {
                     <a href="https://www.youtube.com/@balateater3794" target="_blank" rel="noopener noreferrer">
                         <i className="fab fa-youtube"></i> Bala Teater
                     </a>
-                    <a href="https://wa.me/+628882401300" target="_blank" rel="noopener noreferrer">
+                    <a href="https://wa.me/+62895417779644" target="_blank" rel="noopener noreferrer">
                         <i className="fab fa-whatsapp"></i> WhatsApp
                     </a>
                 </div>
