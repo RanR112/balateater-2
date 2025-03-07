@@ -155,6 +155,7 @@ section {
   backdrop-filter: blur(10px);
   background-color: rgba(0, 0, 0, 0.7);
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease, backdropFilter 0.3s ease, box-shadow 0.3s ease;
   
   .logo {
     font-family: 'Bebas Neue', sans-serif;
@@ -178,33 +179,35 @@ section {
     }
   }
   
-  ul {
-    display: flex;
-    list-style: none;
-    
-    li {
-      margin-left: 30px;
-      position: relative;
+  .desktop-nav {
+    ul {
+      display: flex;
+      list-style: none;
       
-      a {
-        font-size: .9rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        font-weight: 600;
+      li {
+        margin-left: 30px;
         position: relative;
-        padding: 5px 0;
         
-        .underline {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          height: 2px;
-          background-color: $accent-color;
+        a {
+          font-size: .9rem;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          font-weight: 600;
+          position: relative;
+          padding: 5px 0;
+          
+          .underline {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            background-color: $accent-color;
+          }
         }
-      }
-      
-      &.active a {
-        color: $accent-color;
+        
+        &.active a {
+          color: $accent-color;
+        }
       }
     }
   }
@@ -1010,6 +1013,10 @@ section {
     font-size: 13px;
   }
 
+  .desktop-nav {
+    display: none;
+  }
+
   .layer {
     width: 100vw;
     height: 100vh;
@@ -1028,44 +1035,60 @@ section {
       background: rgba($color: #000000, $alpha: 0.9);
       border: 1px solid rgba(255, 255, 255, 0.6);
       height: 100vh;
-      width: 80%;
-      // right: -100vh;
+      width: 60%;
       top: 0;
-      transform: translate(-50%);
+      right: 0;
       z-index: 2000;
       box-shadow: 0 2px 4px rgba(2, 15, 29, 0.9);
-      transition: display 2s ease-in-out;
-      display: none;
-    }
-
-    .activeNav {
-      // right: -70vh;
-      right: 0;
-      left: 90%;
-      display: block;
-      z-index: 100;
-      transition: display 2s ease-in-out;
-
-
+      transition: transform 0.5s ease-in-out;
+      transform: translateX(100%);
+      
       ul {
+        display: flex;
         flex-direction: column;
-        justify-content: center;
+        list-style: none;
+        padding: 3rem 0;
         width: 100%;
         margin: auto;
-        padding: 3rem 0;
-
+        
         li {
+          margin-left: 0;
           padding: .5rem 0;
-
+          position: relative;
+          text-align: center;
+          
           a {
             font-size: 1.1rem;
-
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            position: relative;
+            padding: 5px 0;
+            
+            .underline {
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              height: 2px;
+              background-color: $accent-color;
+            }
+            
             @media screen and (max-width: 340px) {
               font-size: 1rem;
             }
           }
+          
+          &.active a {
+            color: $accent-color;
+          }
         }
       }
+    }
+
+    .activeNav {
+      right: 0;
+      transform: translateX(0);
+      z-index: 100;
     }
 
     .hamburger {

@@ -146,6 +146,7 @@ section:nth-child(odd) {
           backdrop-filter: blur(10px);
   background-color: rgba(0, 0, 0, 0.7);
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease, backdropFilter 0.3s ease, box-shadow 0.3s ease;
 }
 .main-nav .logo {
   font-family: "Bebas Neue", sans-serif;
@@ -164,15 +165,15 @@ section:nth-child(odd) {
 .main-nav .logo span.accent {
   color: #6a7079;
 }
-.main-nav ul {
+.main-nav .desktop-nav ul {
   display: flex;
   list-style: none;
 }
-.main-nav ul li {
+.main-nav .desktop-nav ul li {
   margin-left: 30px;
   position: relative;
 }
-.main-nav ul li a {
+.main-nav .desktop-nav ul li a {
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -180,14 +181,14 @@ section:nth-child(odd) {
   position: relative;
   padding: 5px 0;
 }
-.main-nav ul li a .underline {
+.main-nav .desktop-nav ul li a .underline {
   position: absolute;
   bottom: 0;
   left: 0;
   height: 2px;
   background-color: #6a7079;
 }
-.main-nav ul li.active a {
+.main-nav .desktop-nav ul li.active a {
   color: #6a7079;
 }
 .main-nav .hamburger {
@@ -869,6 +870,9 @@ section:nth-child(odd) {
   html {
     font-size: 13px;
   }
+  .desktop-nav {
+    display: none;
+  }
   .layer {
     width: 100vw;
     height: 100vh;
@@ -886,38 +890,59 @@ section:nth-child(odd) {
     background: rgba(0, 0, 0, 0.9);
     border: 1px solid rgba(255, 255, 255, 0.6);
     height: 100vh;
-    width: 80%;
+    width: 60%;
     top: 0;
-    transform: translate(-50%);
+    right: 0;
     z-index: 2000;
     box-shadow: 0 2px 4px rgba(2, 15, 29, 0.9);
-    transition: display 2s ease-in-out;
-    display: none;
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(100%);
   }
-  .main-nav .activeNav {
-    right: 0;
-    left: 90%;
-    display: block;
-    z-index: 100;
-    transition: display 2s ease-in-out;
-  }
-  .main-nav .activeNav ul {
+  .main-nav .nav ul {
+    display: flex;
     flex-direction: column;
-    justify-content: center;
+    list-style: none;
+    padding: 3rem 0;
     width: 100%;
     margin: auto;
-    padding: 3rem 0;
   }
-  .main-nav .activeNav ul li {
+  .main-nav .nav ul li {
+    margin-left: 0;
     padding: 0.5rem 0;
+    position: relative;
+    text-align: center;
   }
-  .main-nav .activeNav ul li a {
+  .main-nav .nav ul li a {
     font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    position: relative;
+    padding: 5px 0;
+  }
+  .main-nav .nav ul li a .underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background-color: #6a7079;
   }
 }
 @media screen and (max-width: 768px) and (max-width: 340px) {
-  .main-nav .activeNav ul li a {
+  .main-nav .nav ul li a {
     font-size: 1rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .main-nav .nav ul li.active a {
+    color: #6a7079;
+  }
+}
+@media screen and (max-width: 768px) {
+  .main-nav .activeNav {
+    right: 0;
+    transform: translateX(0);
+    z-index: 100;
   }
 }
 @media screen and (max-width: 768px) {
