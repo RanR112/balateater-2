@@ -9,6 +9,7 @@ const RegistrationForm = () => {
         Email: ''
     });
     const formRef = useRef(null);
+    const formActionUrl = process.env.REACT_APP_GOOGLE_SCRIPT_URL;
     
     const [submissionStatus, setSubmissionStatus] = useState(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -199,7 +200,7 @@ const RegistrationForm = () => {
                     Silahkan isi form dibawah ini jika kamu berminat untuk bergabung
                 </p>
                 
-                <form ref={formRef} method='POST' action='https://script.google.com/macros/s/AKfycbyqPI4Yr7e1U7g-yG17AHYsnsLXPiGULzVJllVp6UizOjE_NfnmggKLzsk7Jf_M2tf6/exec'>
+                <form ref={formRef} method='POST' action={formActionUrl}>
                     {[
                         { name: 'Nama', label: 'Nama', type: 'text'},
                         { name: 'Kelas', label: 'Kelas', type: 'text'},
