@@ -896,57 +896,58 @@ section {
       }
     }
     
-    .footer-social {
-      flex: 1;
-      min-width: 300px;
+  }
+  .footer-social {
+    flex: 1;
+    max-width: 200px;
+    margin-bottom: 2rem;
+    
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      position: relative;
+      padding-bottom: 10px;
       
-      h3 {
-        font-size: 1.5rem;
-        margin-bottom: 15px;
-        position: relative;
-        padding-bottom: 10px;
-        
-        &::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 50px;
-          height: 2px;
-          background-color: $accent-color;
-        }
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 2px;
+        background-color: $accent-color;
       }
+    }
+    
+    .social-links {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
       
-      .social-links {
+      a {
         display: flex;
-        flex-direction: column;
-        gap: 15px;
+        align-items: center;
+        gap: 10px;
+        font-size: 1.1rem;
         
-        a {
+        i {
+          width: 40px;
+          height: 40px;
+          background-color: rgba(255, 255, 255, 0.1);
+          border-radius: 50%;
           display: flex;
           align-items: center;
-          gap: 10px;
-          font-size: 1.1rem;
+          justify-content: center;
+          transition: all 0.3s ease;
+        }
+        
+        &:hover {
+          color: $accent-color;
           
           i {
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-          }
-          
-          &:hover {
-            color: $accent-color;
-            
-            i {
-              background-color: $accent-color;
-              color: white;
-              transform: scale(1.1);
-            }
+            background-color: $accent-color;
+            color: white;
+            transform: scale(1.1);
           }
         }
       }
@@ -960,7 +961,11 @@ section {
     
     p {
       font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.6);
+      color: rgba(255, 255, 255, 0.9);
+
+      &:hover {
+        color: rgba(255, 255, 255, 0.6);
+      }
     }
   }
 }

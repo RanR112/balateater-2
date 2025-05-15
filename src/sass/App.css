@@ -775,17 +775,18 @@ section:nth-child(odd) {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.footer .footer-content .footer-social {
+.footer .footer-social {
   flex: 1;
-  min-width: 300px;
+  max-width: 200px;
+  margin-bottom: 2rem;
 }
-.footer .footer-content .footer-social h3 {
+.footer .footer-social h3 {
   font-size: 1.5rem;
   margin-bottom: 15px;
   position: relative;
   padding-bottom: 10px;
 }
-.footer .footer-content .footer-social h3::after {
+.footer .footer-social h3::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -794,18 +795,18 @@ section:nth-child(odd) {
   height: 2px;
   background-color: #6a7079;
 }
-.footer .footer-content .footer-social .social-links {
+.footer .footer-social .social-links {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
-.footer .footer-content .footer-social .social-links a {
+.footer .footer-social .social-links a {
   display: flex;
   align-items: center;
   gap: 10px;
   font-size: 1.1rem;
 }
-.footer .footer-content .footer-social .social-links a i {
+.footer .footer-social .social-links a i {
   width: 40px;
   height: 40px;
   background-color: rgba(255, 255, 255, 0.1);
@@ -815,10 +816,10 @@ section:nth-child(odd) {
   justify-content: center;
   transition: all 0.3s ease;
 }
-.footer .footer-content .footer-social .social-links a:hover {
+.footer .footer-social .social-links a:hover {
   color: #6a7079;
 }
-.footer .footer-content .footer-social .social-links a:hover i {
+.footer .footer-social .social-links a:hover i {
   background-color: #6a7079;
   color: white;
   transform: scale(1.1);
@@ -830,6 +831,9 @@ section:nth-child(odd) {
 }
 .footer .footer-copyright p {
   font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+.footer .footer-copyright p:hover {
   color: rgba(255, 255, 255, 0.6);
 }
 
