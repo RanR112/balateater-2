@@ -1,12 +1,12 @@
 // main.scss
 
 // Import fonts
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&family=Bebas+Neue&display=swap');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&family=Bebas+Neue&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
 
 // Variables
 $primary-color: #6a7079;
-$secondary-color: #1A1A1A;
+$secondary-color: #1a1a1a;
 $text-color: #ffffff;
 $accent-color: #6a7079;
 $bg-dark: #0a0a0a;
@@ -36,7 +36,7 @@ html {
 }
 
 body {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   background-color: $bg-dark;
   color: $text-color;
   overflow-x: hidden;
@@ -48,13 +48,18 @@ a {
   color: $text-color;
   transition: $transition-smooth;
   cursor: none;
-  
+
   &:hover {
     color: $accent-color;
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 1rem;
@@ -68,9 +73,9 @@ h2 {
   padding-bottom: 15px;
   text-align: center;
   margin-bottom: 3rem;
-  
+
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -79,7 +84,7 @@ h2 {
     height: 3px;
     background-color: $accent-color;
   }
-  
+
   .accent {
     color: $accent-color;
   }
@@ -89,7 +94,7 @@ section {
   padding: 100px 5%;
   position: relative;
   overflow: hidden;
-  
+
   &:nth-child(odd) {
     background-color: rgba(20, 20, 20, 0.6);
   }
@@ -155,10 +160,13 @@ section {
   backdrop-filter: blur(10px);
   background-color: rgba(0, 0, 0, 0.7);
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
-  transition: background-color 0.3s ease, backdropFilter 0.3s ease, box-shadow 0.3s ease;
-  
+  transition:
+    background-color 0.3s ease,
+    backdropFilter 0.3s ease,
+    box-shadow 0.3s ease;
+
   .logo {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: "Bebas Neue", sans-serif;
     font-size: 2rem;
     font-weight: bold;
     letter-spacing: 2px;
@@ -171,31 +179,31 @@ section {
       margin-right: 10px;
       align-items: center;
     }
-    
+
     span {
       &.accent {
         color: $accent-color;
       }
     }
   }
-  
+
   .desktop-nav {
     ul {
       display: flex;
       list-style: none;
-      
+
       li {
         margin-left: 30px;
         position: relative;
-        
+
         a {
-          font-size: .9rem;
+          font-size: 0.9rem;
           text-transform: uppercase;
           letter-spacing: 1px;
           font-weight: 600;
           position: relative;
           padding: 5px 0;
-          
+
           .underline {
             position: absolute;
             bottom: 0;
@@ -204,7 +212,7 @@ section {
             background-color: $accent-color;
           }
         }
-        
+
         &.active a {
           color: $accent-color;
         }
@@ -215,18 +223,18 @@ section {
   .hamburger {
     display: none;
   }
-  
+
   .hamburger input {
     display: none;
   }
-  
+
   .hamburger svg {
     /* The size of the SVG defines the overall size */
     height: 3em;
     /* Define the transition for transforming the SVG */
     transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
   }
-  
+
   .line {
     fill: none;
     stroke: white;
@@ -234,23 +242,23 @@ section {
     stroke-linejoin: round;
     stroke-width: 3;
     /* Define the transition for transforming the Stroke */
-    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
-                stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition:
+      stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+      stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
   }
-  
+
   .line-top-bottom {
     stroke-dasharray: 12 63;
   }
-  
+
   .hamburger input:checked + svg {
     transform: rotate(-45deg);
   }
-  
+
   .hamburger input:checked + svg .line-top-bottom {
     stroke-dasharray: 20 300;
     stroke-dashoffset: -32.42;
   }
-  
 }
 
 // Hero Section
@@ -262,7 +270,7 @@ section {
   padding-top: 70px;
   position: relative;
   overflow: hidden;
-  
+
   .hero-video-container {
     position: absolute;
     top: 0;
@@ -270,7 +278,7 @@ section {
     width: 100%;
     height: 100%;
     z-index: -1;
-    
+
     .hero-video {
       width: 100%;
       height: 100%;
@@ -279,28 +287,23 @@ section {
       // background-position: center;
       // background-image: url(./masfiqi.jpg);
     }
-    
+
     .hero-overlay {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.5) 0%,
-        rgba(0, 0, 0, 0.4) 70%,
-        rgba(0, 0, 0, 0.6) 100%
-      );
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.4) 70%, rgba(0, 0, 0, 0.6) 100%);
     }
   }
-  
+
   .hero-content {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
     padding: 0 20px;
-    
+
     h1 {
       font-size: 4rem;
       margin-bottom: 1.5rem;
@@ -308,13 +311,13 @@ section {
       letter-spacing: 3px;
       line-height: 1.2;
       font-weight: 700;
-      
+
       span {
         display: block;
         font-size: 4.5rem;
       }
     }
-    
+
     .tagline {
       font-size: 1.5rem;
       font-style: italic;
@@ -323,14 +326,14 @@ section {
       font-weight: 300;
       text-shadow: 2px 2px 4px #0000007e;
     }
-    
+
     .description {
       font-size: 1.1rem;
       max-width: 700px;
       margin: 0 auto 3rem;
       opacity: 0.9;
     }
-    
+
     .cta-button {
       background-color: $accent-color;
       color: #fff;
@@ -341,7 +344,7 @@ section {
       letter-spacing: 2px;
       border-radius: 5px;
       transition: $transition-smooth;
-      
+
       &:hover {
         background-color: darken($accent-color, 10%);
         transform: translateY(-3px);
@@ -358,7 +361,7 @@ section {
     flex-wrap: wrap;
     align-items: center;
     gap: 50px;
-    
+
     .about-image {
       flex: 1;
       min-width: 300px;
@@ -366,45 +369,41 @@ section {
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4);
-      
+
       img {
         width: 100%;
         height: auto;
         display: block;
         transition: transform 0.6s ease;
       }
-      
+
       .image-overlay {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(
-          to bottom,
-          rgba(0, 0, 0, 0) 0%,
-          rgba(0, 0, 0, 0.5) 100%
-        );
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
       }
-      
+
       &:hover {
         img {
           transform: scale(1.05);
         }
       }
     }
-    
+
     .about-text {
       flex: 1;
       min-width: 300px;
-      
+
       p {
         margin-bottom: 1.5rem;
         font-size: 1.1rem;
         line-height: 1.8;
         text-align: justify;
         text-shadow: 2px 2px 4px #535353;
-        
+
         &:last-child {
           margin-bottom: 0;
         }
@@ -417,7 +416,6 @@ section {
   justify-content: center;
   align-items: center;
 
-
   .gallery-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -426,22 +424,24 @@ section {
     @media screen and (max-width: 600px) {
       grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     }
-    
+
     .gallery-item {
       overflow: hidden;
       position: relative;
       border-radius: 10px;
       aspect-ratio: 1 / 1;
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         transition: transform 0.5s ease;
       }
-      
+
       .gallery-overlay {
         position: absolute;
         top: 0;
@@ -454,7 +454,7 @@ section {
         justify-content: center;
         opacity: 0;
         transition: opacity 0.3s ease;
-        
+
         span {
           color: white;
           font-size: 1.2rem;
@@ -473,17 +473,17 @@ section {
           }
         }
       }
-      
+
       &:hover {
         transform: translateY(-5px);
-        
+
         img {
           transform: scale(1.1);
         }
-        
+
         .gallery-overlay {
           opacity: 1;
-          
+
           span {
             transform: translateY(0);
           }
@@ -505,38 +505,38 @@ section {
     z-index: 1000;
 
     .fullscreen-content {
-        max-width: 60%;
-        max-height: fit-content;
+      max-width: 60%;
+      max-height: fit-content;
 
-        @media screen and (max-width: 768px) {
-          max-width: 90%;
-        }
+      @media screen and (max-width: 768px) {
+        max-width: 90%;
+      }
 
-        .fullscreen-image {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin: auto;
-        }
-        
-        .close-button {
-            position: absolute;
-            top: 30px;
-            right: 30px;
-            background: white;
-            border: none;
-            font-size: 24px;
-            padding: 4px 10px;
-            border-radius: 50%;
-            transition: all 0.2s ease-in;
+      .fullscreen-image {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        margin: auto;
+      }
 
-            &:hover {
-                background-color: $accent-color;
-                color: $text-color;
-            }
+      .close-button {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        background: white;
+        border: none;
+        font-size: 24px;
+        padding: 4px 10px;
+        border-radius: 50%;
+        transition: all 0.2s ease-in;
+
+        &:hover {
+          background-color: $accent-color;
+          color: $text-color;
         }
+      }
     }
-}
+  }
 
   .show-more-button {
     background-color: transparent;
@@ -550,11 +550,12 @@ section {
     letter-spacing: 2px;
     border-radius: 5px;
     transition: $transition-smooth;
-    
+
     &:hover {
-      background-color: darken($accent-color, 10%);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      background-color: $accent-color;
+      transform: translateY(-2px);
+      border: 2px solid $accent-color;
+      box-shadow: 0 10px 20px rgba($accent-color, 0.3);
     }
   }
 }
@@ -564,9 +565,9 @@ section {
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
-    
+
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       bottom: 0;
@@ -575,27 +576,27 @@ section {
       left: 50%;
       transform: translateX(-50%);
     }
-    
+
     .timeline-item {
       position: relative;
       width: 50%;
       padding: 20px 40px;
       margin-bottom: 25px;
       box-sizing: border-box;
-      
+
       &:nth-child(odd) {
         left: 0;
         padding-right: 50px;
-        
+
         .timeline-content {
           text-align: right;
           border-radius: 20px 0 20px 20px;
           backdrop-filter: blur(2px);
           background: #c5c5c520;
           box-shadow: 0 0 6px 4px #c5c5c520;
-          
+
           &::after {
-            content: '';
+            content: "";
             position: absolute;
             top: 20px;
             right: -10px;
@@ -607,19 +608,19 @@ section {
           }
         }
       }
-      
+
       &:nth-child(even) {
         left: 50%;
         padding-left: 50px;
-        
+
         .timeline-content {
           border-radius: 0 20px 20px 20px;
           backdrop-filter: blur(2px);
           background: #c5c5c520;
           box-shadow: 0 0 6px 4px #c5c5c520;
-          
+
           &::after {
-            content: '';
+            content: "";
             position: absolute;
             top: 20px;
             left: -10px;
@@ -631,7 +632,7 @@ section {
           }
         }
       }
-      
+
       .timeline-content {
         position: relative;
         padding: 30px;
@@ -639,13 +640,15 @@ section {
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         backdrop-filter: blur(5px);
         border: 1px solid rgba(255, 255, 255, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+
         &:hover {
           transform: translateY(-5px);
           box-shadow: 0 0 15px 3px rgba(212, 212, 212, 0.4);
         }
-        
+
         .year {
           display: inline-block;
           padding: 5px 15px;
@@ -656,7 +659,7 @@ section {
           margin-bottom: 15px;
           font-size: 1.1rem;
         }
-        
+
         .title {
           font-size: 1.15rem;
           line-height: 1.5;
@@ -670,12 +673,274 @@ section {
   }
 }
 
+// Kademangan Styles - Tambahkan ini ke App.scss Anda
+
+.kademangan-section {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  // Tampilan demang saat ini (tengah)
+  .current-demang {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+
+    // Buat wrapper untuk memastikan ukuran sama dengan grid
+    .demang-wrapper {
+      width: 100%;
+      max-width: 350px;
+
+      @media screen and (max-width: 768px) {
+        max-width: 280px;
+      }
+    }
+  }
+
+  // Tampilan grid untuk semua demang
+  .all-demang {
+    .demang-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-bottom: 3rem;
+      max-width: 1050px; // 3 * 350px
+      margin-left: auto;
+      margin-right: auto;
+
+      @media screen and (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        max-width: 580px; // 2 * 280px + gap
+      }
+
+      @media screen and (max-width: 480px) {
+        gap: 15px;
+        max-width: 575px; // 2 * 280px + gap
+      }
+    }
+  }
+
+  // Style untuk card demang
+  .demang-card {
+    background: rgba(30, 30, 30, 0.8);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    text-align: center;
+
+    @media screen and (max-width: 768px) {
+      max-width: 280px;
+      padding: 15px;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      border-color: rgba($accent-color, 0.3);
+    }
+
+    &.current {
+      border: 2px solid $accent-color;
+      box-shadow: 0 0 20px rgba($accent-color, 0.3);
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, $accent-color, lighten($accent-color, 20%));
+      }
+    }
+
+    .demang-image {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .image-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%);
+        transition: background 0.3s ease;
+      }
+
+      &:hover {
+        img {
+          transform: scale(1.05);
+        }
+
+        .image-overlay {
+          background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba($accent-color, 0.2) 100%);
+        }
+      }
+    }
+
+    .demang-info {
+      text-align: center;
+
+      .demang-name {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: $text-color;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .demang-period {
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 10px;
+        font-weight: 400;
+      }
+
+      .current-badge {
+        display: inline-block;
+        background: linear-gradient(135deg, $accent-color, lighten($accent-color, 10%));
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: 0 5px 15px rgba($accent-color, 0.3);
+        animation: pulse 2s infinite;
+      }
+    }
+  }
+
+  // Style untuk tombol show more
+  .show-more-button {
+    background-color: transparent;
+    border: 2px solid $text-color;
+    display: block;
+    margin: 0 auto;
+    color: $text-color;
+    padding: 15px 35px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    transition: $transition-smooth;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      transition: left 0.5s ease;
+    }
+
+    &:hover {
+      background-color: $accent-color;
+      border: 2px solid $accent-color;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba($accent-color, 0.3);
+
+      &::before {
+        left: 100%;
+      }
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+// Animasi khusus untuk badge saat ini
+@keyframes pulse {
+  0% {
+    box-shadow: 0 5px 15px rgba($accent-color, 0.3);
+  }
+  50% {
+    box-shadow: 0 5px 25px rgba($accent-color, 0.5);
+  }
+  100% {
+    box-shadow: 0 5px 15px rgba($accent-color, 0.3);
+  }
+}
+
+// Responsif untuk mobile
+@media screen and (max-width: 480px) {
+  .kademangan-section {
+    .current-demang {
+      .demang-wrapper {
+        max-width: 250px;
+      }
+    }
+
+    .all-demang {
+      .demang-grid {
+        max-width: 515px; // 2 * 250px + gap
+      }
+    }
+
+    .demang-card {
+      max-width: 250px;
+      padding: 15px;
+
+      .demang-info {
+        .demang-name {
+          font-size: 1.1rem;
+        }
+
+        .demang-period {
+          font-size: 0.9rem;
+        }
+
+        .current-badge {
+          font-size: 0.7rem;
+          padding: 4px 12px;
+        }
+      }
+    }
+
+    .show-more-button {
+      padding: 12px 25px;
+      font-size: 0.9rem;
+    }
+  }
+}
+
 .registration-section {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(10, 10, 10, 0.9) 100%);
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
-  
+
   .form-container {
     max-width: 600px;
     margin: 0 auto;
@@ -685,18 +950,18 @@ section {
     border-radius: 15px;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    
+
     .form-intro {
       text-align: center;
       margin-bottom: 2rem;
       font-size: 1.1rem;
       color: rgba(255, 255, 255, 0.8);
     }
-    
+
     .form-group {
       position: relative;
       margin-bottom: 30px;
-      
+
       label {
         position: absolute;
         top: 15px;
@@ -706,7 +971,7 @@ section {
         transition: all 0.3s ease;
         pointer-events: none;
       }
-      
+
       input {
         width: 100%;
         padding: 15px 10px;
@@ -717,12 +982,12 @@ section {
         border-bottom: 2px solid rgba(255, 255, 255, 0.2);
         outline: none;
         transition: border-color 0.3s ease;
-        
+
         &:focus {
           border-color: $accent-color;
         }
       }
-      
+
       .input-highlight {
         position: absolute;
         bottom: 0;
@@ -732,23 +997,23 @@ section {
         background-color: $accent-color;
         transition: width 0.3s ease;
       }
-      
+
       &.active {
         label {
           transform: translateY(-25px) scale(0.9);
           color: $accent-color;
         }
-        
+
         input {
           border-color: $accent-color;
         }
-        
+
         .input-highlight {
           width: 100%;
         }
       }
     }
-    
+
     .submit-button {
       display: block;
       width: 100%;
@@ -762,7 +1027,7 @@ section {
       text-transform: uppercase;
       letter-spacing: 2px;
       transition: all 0.3s ease;
-      
+
       &:hover {
         background-color: darken($accent-color, 10%);
         box-shadow: 0 0 20px rgba($accent-color, 0.5);
@@ -774,54 +1039,54 @@ section {
       padding: 1rem;
       border-radius: 8px;
       text-align: center;
-    
+
       &.success {
-        background-color: #003413; 
+        background-color: #003413;
         color: white;
       }
-    
+
       &.duplicate {
-        background-color: #5f5501; 
+        background-color: #5f5501;
         color: white;
       }
-    
+
       &.rejected {
-        background-color: #7b4400; 
+        background-color: #7b4400;
         color: white;
       }
 
       &.error {
-        background-color: #7b0000; 
+        background-color: #7b0000;
         color: white;
       }
-    
+
       .message-text {
         margin-bottom: 12px;
       }
-    
+
       .button-container {
         display: flex;
         justify-content: center;
         gap: 16px;
-    
+
         .btn {
           padding: 8px 16px;
           border-radius: 5px;
           color: white;
           border: none;
           transition: background-color 0.3s ease;
-    
+
           &-yes {
             background-color: #007029;
-    
+
             &:hover {
               background-color: #006425;
             }
           }
-    
+
           &-no {
-            background-color: #7b0000; 
-    
+            background-color: #7b0000;
+
             &:hover {
               background-color: #5f0000;
             }
@@ -845,26 +1110,26 @@ section {
   background-color: #0a0a0a;
   padding: 70px 5% 30px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  
+
   .footer-content {
     display: flex;
     flex-wrap: wrap;
     gap: 50px;
     margin-bottom: 50px;
-    
+
     .footer-bio {
       flex: 1;
       min-width: 300px;
       justify-content: center;
-      
+
       h3 {
         font-size: 1.5rem;
         margin-bottom: 15px;
         position: relative;
         padding-bottom: 10px;
-        
+
         &::after {
-          content: '';
+          content: "";
           position: absolute;
           bottom: 0;
           left: 0;
@@ -873,13 +1138,13 @@ section {
           background-color: $accent-color;
         }
       }
-      
+
       p {
         margin-bottom: 20px;
         line-height: 1.6;
         text-align: justify;
       }
-      
+
       .coach-image {
         width: 150px;
         height: 150px;
@@ -887,7 +1152,7 @@ section {
         overflow: hidden;
         border: 3px solid $accent-color;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-        
+
         img {
           width: 100%;
           height: 100%;
@@ -895,21 +1160,20 @@ section {
         }
       }
     }
-    
   }
   .footer-social {
     flex: 1;
     max-width: 200px;
     margin-bottom: 2rem;
-    
+
     h3 {
       font-size: 1.5rem;
       margin-bottom: 15px;
       position: relative;
       padding-bottom: 10px;
-      
+
       &::after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: 0;
         left: 0;
@@ -918,18 +1182,18 @@ section {
         background-color: $accent-color;
       }
     }
-    
+
     .social-links {
       display: flex;
       flex-direction: column;
       gap: 15px;
-      
+
       a {
         display: flex;
         align-items: center;
         gap: 10px;
         font-size: 1.1rem;
-        
+
         i {
           width: 40px;
           height: 40px;
@@ -940,10 +1204,10 @@ section {
           justify-content: center;
           transition: all 0.3s ease;
         }
-        
+
         &:hover {
           color: $accent-color;
-          
+
           i {
             background-color: $accent-color;
             color: white;
@@ -953,12 +1217,12 @@ section {
       }
     }
   }
-  
+
   .footer-copyright {
     text-align: center;
     padding-top: 30px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    
+
     p {
       font-size: 0.9rem;
       color: rgba(255, 255, 255, 0.9);
@@ -975,38 +1239,38 @@ section {
   html {
     font-size: 14px;
   }
-  
+
   .hero-section .hero-content h1 {
     font-size: 3.5rem;
-    
+
     span {
       font-size: 4rem;
     }
   }
-  
+
   .achievements-section .timeline::before {
     left: 40px;
   }
-  
+
   .achievements-section .timeline .timeline-item {
     width: 100%;
     padding-left: 50px;
     padding-right: 50px;
-    
+
     &:nth-child(odd) {
       left: 0;
-      
+
       .timeline-content {
         text-align: left;
         border-radius: 0 20px 20px 20px;
-        
+
         &::after {
           left: -10px;
           right: auto;
         }
       }
     }
-    
+
     &:nth-child(even) {
       left: 0;
     }
@@ -1031,10 +1295,10 @@ section {
     top: -1.1rem;
     left: 0;
   }
-  
+
   .main-nav {
     padding: 15px 5%;
-    
+
     .nav {
       position: absolute;
       background: rgba($color: #000000, $alpha: 0.9);
@@ -1047,7 +1311,7 @@ section {
       box-shadow: 0 2px 4px rgba(2, 15, 29, 0.9);
       transition: transform 0.5s ease-in-out;
       transform: translateX(100%);
-      
+
       ul {
         display: flex;
         flex-direction: column;
@@ -1055,13 +1319,13 @@ section {
         padding: 3rem 0;
         width: 100%;
         margin: auto;
-        
+
         li {
           margin-left: 0;
-          padding: .5rem 0;
+          padding: 0.5rem 0;
           position: relative;
           text-align: center;
-          
+
           a {
             font-size: 1.1rem;
             text-transform: uppercase;
@@ -1069,7 +1333,7 @@ section {
             font-weight: 600;
             position: relative;
             padding: 5px 0;
-            
+
             .underline {
               position: absolute;
               bottom: 0;
@@ -1077,12 +1341,12 @@ section {
               height: 2px;
               background-color: $accent-color;
             }
-            
+
             @media screen and (max-width: 340px) {
               font-size: 1rem;
             }
           }
-          
+
           &.active a {
             color: $accent-color;
           }
@@ -1105,19 +1369,19 @@ section {
       }
     }
   }
-  
+
   .hero-section {
     .hero-content {
       h1 {
         font-size: 3rem;
-        
+
         span {
           font-size: 3.5rem;
         }
       }
     }
   }
-  
+
   section {
     padding: 70px 5%;
   }
@@ -1150,7 +1414,7 @@ section {
 // Special effects and animations
 .glitch-effect {
   position: relative;
-  
+
   &::before,
   &::after {
     content: attr(data-text);
@@ -1161,14 +1425,14 @@ section {
     height: 100%;
     background: $bg-dark;
   }
-  
+
   &::before {
     left: 2px;
     text-shadow: -2px 0 $accent-color;
     clip: rect(24px, 550px, 90px, 0);
     animation: glitch-anim 3s infinite linear alternate-reverse;
   }
-  
+
   &::after {
     left: -2px;
     text-shadow: -2px 0 #00ffff;
@@ -1246,63 +1510,63 @@ section {
 // Add this to your main.scss file
 
 .splash-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: $bg-darker;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: $bg-darker;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+
+  .splash-content {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    z-index: 9999;
-    
-    .splash-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      
-      .splash-logo {
-        margin-bottom: 50px;
-        text-align: center;
-        
-        .logo-text {
-          font-family: 'Bebas Neue', sans-serif;
-          font-size: 5rem;
-          letter-spacing: 5px;
-          display: inline-block;
-          
-          &.accent {
-            color: $accent-color;
-            margin-left: 10px;
-          }
-        }
-      }
-      
-      .progress-container {
-        width: 300px;
-        
-        .progress-bar-container {
-          width: 100%;
-          height: 5px;
-          background-color: rgba(255, 255, 255, 0.1);
-          border-radius: 5px;
-          overflow: hidden;
-          margin-bottom: 10px;
-          
-          .progress-bar {
-            height: 100%;
-            background: linear-gradient(90deg, $accent-color, lighten($accent-color, 20%));
-            border-radius: 5px;
-          }
-        }
-        
-        .progress-text {
-          text-align: right;
-          font-size: 0.8rem;
-          color: rgba(255, 255, 255, 0.7);
+
+    .splash-logo {
+      margin-bottom: 50px;
+      text-align: center;
+
+      .logo-text {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 5rem;
+        letter-spacing: 5px;
+        display: inline-block;
+
+        &.accent {
+          color: $accent-color;
+          margin-left: 10px;
         }
       }
     }
+
+    .progress-container {
+      width: 300px;
+
+      .progress-bar-container {
+        width: 100%;
+        height: 5px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
+        overflow: hidden;
+        margin-bottom: 10px;
+
+        .progress-bar {
+          height: 100%;
+          background: linear-gradient(90deg, $accent-color, lighten($accent-color, 20%));
+          border-radius: 5px;
+        }
+      }
+
+      .progress-text {
+        text-align: right;
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.7);
+      }
+    }
   }
+}

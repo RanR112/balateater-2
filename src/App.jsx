@@ -1,6 +1,6 @@
 // App.jsx
 import React, { useEffect, useState, useRef } from 'react';
-import { About, Achievements, Footer, Gallery, Hero, Navigation, Registration } from './contents';
+import { About, Achievements, Footer, Gallery, Hero, Kademangan, Navigation, Registration } from './contents';
 import { ParticleBackground, SplashScreen } from './components';
 import './sass/App.css';
 
@@ -45,6 +45,7 @@ function App() {
           <About />
           <Gallery />
           <Achievements />
+          <Kademangan />
           <Registration />
         </main>
       )}

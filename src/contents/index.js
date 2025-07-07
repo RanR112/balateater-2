@@ -5,3 +5,4 @@ export { default as Gallery } from './Gallery';
 export { default as Hero } from './Hero';
 export { default as Navigation } from './Navigation';
 export { default as Registration } from './Registration';
+export { default as Kademangan } from './Kademangan';

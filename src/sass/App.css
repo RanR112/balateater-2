@@ -45,7 +45,12 @@ a:hover {
   color: #6a7079;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 1rem;
@@ -433,7 +438,6 @@ section:nth-child(odd) {
 }
 .gallery-section .fullscreen-overlay .fullscreen-content {
   max-width: 60%;
-  max-height: -webkit-fit-content;
   max-height: -moz-fit-content;
   max-height: fit-content;
 }
@@ -477,9 +481,10 @@ section:nth-child(odd) {
   transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .gallery-section .show-more-button:hover {
-  background-color: #52575e;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  background-color: #6a7079;
+  transform: translateY(-2px);
+  border: 2px solid #6a7079;
+  box-shadow: 0 10px 20px rgba(106, 112, 121, 0.3);
 }
 
 .achievements-section .timeline {
@@ -581,6 +586,222 @@ section:nth-child(odd) {
   text-align: center;
 }
 
+.kademangan-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.kademangan-section .current-demang {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+.kademangan-section .current-demang .demang-wrapper {
+  width: 100%;
+  max-width: 350px;
+}
+@media screen and (max-width: 768px) {
+  .kademangan-section .current-demang .demang-wrapper {
+    max-width: 280px;
+  }
+}
+.kademangan-section .all-demang .demang-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 3rem;
+  max-width: 1050px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (max-width: 768px) {
+  .kademangan-section .all-demang .demang-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 580px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .kademangan-section .all-demang .demang-grid {
+    gap: 15px;
+    max-width: 575px;
+  }
+}
+.kademangan-section .demang-card {
+  background: rgba(30, 30, 30, 0.8);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  .kademangan-section .demang-card {
+    max-width: 280px;
+    padding: 15px;
+  }
+}
+.kademangan-section .demang-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  border-color: rgba(106, 112, 121, 0.3);
+}
+.kademangan-section .demang-card.current {
+  border: 2px solid #6a7079;
+  box-shadow: 0 0 20px rgba(106, 112, 121, 0.3);
+}
+.kademangan-section .demang-card.current::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #6a7079, #9fa3aa);
+}
+.kademangan-section .demang-card .demang-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+.kademangan-section .demang-card .demang-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.kademangan-section .demang-card .demang-image .image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%);
+  transition: background 0.3s ease;
+}
+.kademangan-section .demang-card .demang-image:hover img {
+  transform: scale(1.05);
+}
+.kademangan-section .demang-card .demang-image:hover .image-overlay {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(106, 112, 121, 0.2) 100%);
+}
+.kademangan-section .demang-card .demang-info {
+  text-align: center;
+}
+.kademangan-section .demang-card .demang-info .demang-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.kademangan-section .demang-card .demang-info .demang-period {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+.kademangan-section .demang-card .demang-info .current-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #6a7079, #838993);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 5px 15px rgba(106, 112, 121, 0.3);
+  animation: pulse 2s infinite;
+}
+.kademangan-section .show-more-button {
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  display: block;
+  margin: 0 auto;
+  color: #ffffff;
+  padding: 15px 35px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  position: relative;
+  overflow: hidden;
+}
+.kademangan-section .show-more-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+.kademangan-section .show-more-button:hover {
+  background-color: #6a7079;
+  border: 2px solid #6a7079;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(106, 112, 121, 0.3);
+}
+.kademangan-section .show-more-button:hover::before {
+  left: 100%;
+}
+.kademangan-section .show-more-button:active {
+  transform: translateY(0);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 5px 15px rgba(106, 112, 121, 0.3);
+  }
+  50% {
+    box-shadow: 0 5px 25px rgba(106, 112, 121, 0.5);
+  }
+  100% {
+    box-shadow: 0 5px 15px rgba(106, 112, 121, 0.3);
+  }
+}
+@media screen and (max-width: 480px) {
+  .kademangan-section .current-demang .demang-wrapper {
+    max-width: 250px;
+  }
+  .kademangan-section .all-demang .demang-grid {
+    max-width: 515px;
+  }
+  .kademangan-section .demang-card {
+    max-width: 250px;
+    padding: 15px;
+  }
+  .kademangan-section .demang-card .demang-info .demang-name {
+    font-size: 1.1rem;
+  }
+  .kademangan-section .demang-card .demang-info .demang-period {
+    font-size: 0.9rem;
+  }
+  .kademangan-section .demang-card .demang-info .current-badge {
+    font-size: 0.7rem;
+    padding: 4px 12px;
+  }
+  .kademangan-section .show-more-button {
+    padding: 12px 25px;
+    font-size: 0.9rem;
+  }
+}
 .registration-section {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(10, 10, 10, 0.9) 100%);
   background-size: cover;
@@ -941,15 +1162,11 @@ section:nth-child(odd) {
   .main-nav .nav ul li.active a {
     color: #6a7079;
   }
-}
-@media screen and (max-width: 768px) {
   .main-nav .activeNav {
     right: 0;
     transform: translateX(0);
     z-index: 100;
   }
-}
-@media screen and (max-width: 768px) {
   .main-nav .hamburger {
     display: block;
     z-index: 1000;
@@ -957,29 +1174,14 @@ section:nth-child(odd) {
   .main-nav .hamburger input {
     padding: 3rem;
   }
-}
-@media screen and (max-width: 768px) {
   .hero-section .hero-content h1 {
     font-size: 3rem;
   }
   .hero-section .hero-content h1 span {
     font-size: 3.5rem;
   }
-}
-@media screen and (max-width: 768px) {
   section {
     padding: 70px 5%;
-  }
-}
-@-webkit-keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-  100% {
-    transform: translateY(0px);
   }
 }
 @keyframes float {
@@ -991,17 +1193,6 @@ section:nth-child(odd) {
   }
   100% {
     transform: translateY(0px);
-  }
-}
-@-webkit-keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(106, 112, 121, 0.7);
-  }
-  70% {
-    box-shadow: 0 0 0 10px rgba(106, 112, 121, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(106, 112, 121, 0);
   }
 }
 @keyframes pulse {
@@ -1038,72 +1229,6 @@ section:nth-child(odd) {
   text-shadow: -2px 0 #00ffff;
   clip: rect(85px, 550px, 140px, 0);
   animation: glitch-anim 2.5s 0.5s infinite linear alternate-reverse;
-}
-
-@-webkit-keyframes glitch-anim {
-  0% {
-    clip: rect(11px, 9999px, 10px, 0);
-  }
-  5% {
-    clip: rect(44px, 9999px, 96px, 0);
-  }
-  10% {
-    clip: rect(54px, 9999px, 98px, 0);
-  }
-  15% {
-    clip: rect(95px, 9999px, 59px, 0);
-  }
-  20% {
-    clip: rect(91px, 9999px, 98px, 0);
-  }
-  25% {
-    clip: rect(40px, 9999px, 73px, 0);
-  }
-  30% {
-    clip: rect(6px, 9999px, 12px, 0);
-  }
-  35% {
-    clip: rect(25px, 9999px, 61px, 0);
-  }
-  40% {
-    clip: rect(24px, 9999px, 26px, 0);
-  }
-  45% {
-    clip: rect(76px, 9999px, 97px, 0);
-  }
-  50% {
-    clip: rect(46px, 9999px, 15px, 0);
-  }
-  55% {
-    clip: rect(72px, 9999px, 92px, 0);
-  }
-  60% {
-    clip: rect(23px, 9999px, 66px, 0);
-  }
-  65% {
-    clip: rect(58px, 9999px, 30px, 0);
-  }
-  70% {
-    clip: rect(57px, 9999px, 99px, 0);
-  }
-  75% {
-    clip: rect(39px, 9999px, 12px, 0);
-  }
-  80% {
-    clip: rect(23px, 9999px, 77px, 0);
-  }
-  85% {
-    clip: rect(56px, 9999px, 23px, 0);
-  }
-  90% {
-    clip: rect(81px, 9999px, 43px, 0);
-  }
-  95% {
-    clip: rect(69px, 9999px, 16px, 0);
-  }
-  100% {
-    clip: rect(76px, 9999px, 71px, 0);
-  }
 }
 
 @keyframes glitch-anim {
@@ -1223,5 +1348,4 @@ section:nth-child(odd) {
   text-align: right;
   font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.7);
-}
-/*# sourceMappingURL=App.css.map */
+}/*# sourceMappingURL=App.css.map */
