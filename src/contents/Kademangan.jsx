@@ -138,7 +138,7 @@ const Kademangan = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                 >
-                    {showAll ? "Tutup" : "Selengkapnya"}
+                    {showAll ? "Lebih Sedikit" : "Selengkapnya"}
                 </motion.button>
             </div>
         </section>
