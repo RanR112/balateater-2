@@ -42,7 +42,7 @@ export { default as Gallery35 } from './images/Galleries/35.jpg';
 export { default as Fauzi } from './images/demang/fauzi.jpg';
 export { default as Dewa } from './images/demang/dewa.jpg';
 export { default as Panggih } from './images/demang/panggih.jpg';
-// export { default as Tafi } from './images/demang/tafi.jpg';
+export { default as Tafi } from './images/demang/tafi.jpg';
 export { default as Sheva } from './images/demang/sheva.jpg';
 export { default as Asiv } from './images/demang/asiv.jpg';
 export { default as Madina } from './images/demang/madina.jpg';

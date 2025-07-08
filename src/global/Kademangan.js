@@ -1,4 +1,4 @@
-import { Amel, Asiv, Dewa, Fauzi, Madina, Panggih, Sheva } from "../assets";
+import { Amel, Asiv, Dewa, Fauzi, Madina, Panggih, Sheva, Tafi } from "../assets";
 
 const demangData = [
     {
@@ -26,7 +26,7 @@ const demangData = [
         id: 4,
         name: "Siti Muntafi'ah",
         period: "2020 - 2021",
-        image: "",
+        image: Tafi,
         isCurrent: false,
     },
     {
